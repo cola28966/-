@@ -15,4 +15,11 @@ public class ViewObject {
     public Object get(String key) {
         return objs.get(key);
     }
+
+    @Override
+    public String toString() {
+        return "ViewObject{" +
+                "objs=" + objs +
+                '}';
+    }
 }
