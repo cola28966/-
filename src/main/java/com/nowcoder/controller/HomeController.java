@@ -39,9 +39,7 @@ public class HomeController {
             Map<String, Object> map = new HashMap<>();
        /*     ViewObject vo = new ViewObject();*/
             map.put("question", question);
-            System.out.println(question);
             map.put("user", userService.getUser(question.getUserId()));
-            System.out.println(userService.getUser(question.getUserId()));
 //            vo.set("question", question);
 //            vo.set("user", userService.getUser(question.getUserId()));
             vos.add(map);

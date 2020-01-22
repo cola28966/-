@@ -42,7 +42,7 @@ public class LoginController {
             Map<String,Object> vo;
             vo = userService.login(username, password);
             System.out.println(vo);
-            if (!vo.containsKey("ticket") ) {
+            if (vo.containsKey("ticket") ) {
                model.addAttribute("msg",vo.get("msg"));
                return "login";
             } else {
@@ -56,7 +56,7 @@ public class LoginController {
                 if (StringUtils.isNotBlank(next)&&!next.equals("false")) {
                     return "redirect:" + next;
                 }
-                return "index";
+                return "redirect:/";
             }
         }catch (Exception e){
             logger.error("登录异常" + e.getMessage());
@@ -85,7 +85,7 @@ public class LoginController {
                 if (StringUtils.isNotBlank(next)) {
                     return "redirect:" + next;
                 }
-                return "index";
+                return "redirect:/";
             } else {
                 model.addAttribute("msg", vo.get("msg"));
                 return "login";
